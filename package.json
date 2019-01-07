@@ -1,7 +1,7 @@
 {
   "name": "message-posting-assignment",
   "version": "0.0.0",
-  "license": "MIT",
+  "license": "SSW",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
