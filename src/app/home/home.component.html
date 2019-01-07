@@ -1,0 +1,25 @@
+﻿<div class="col-md-6 col-md-offset-3">
+    <!-- <h2>Welcome {{currentUser.firstName}}!</h2> -->
+    
+    <h3>All Registered User List:</h3>
+        
+    <section class="bx--structured-list">
+        <div class="bx--structured-list-thead">
+          <div class="bx--structured-list-row bx--structured-list-row--header-row">
+              <div class="bx--structured-list-th">Username</div>
+              <div class="bx--structured-list-th">Firstname</div>
+              <div class="bx--structured-list-th">Lastname</div>
+              <div class="bx--structured-list-th">Action</div>
+          </div>
+        </div>
+        <div class="bx--structured-list-tbody">
+                <div *ngFor="let user of users" class="bx--structured-list-row">
+                    <div class="bx--structured-list-td">{{user.username}}</div>
+                    <div class="bx--structured-list-td">{{user.firstName}}</div>
+                    <div class="bx--structured-list-td">{{user.lastName}}</div>
+                    <div class="bx--structured-list-td"><a (click)="deleteUser(user.id)">Delete</a></div>
+                </div>        
+        </div>
+      </section>
+      <!-- <p><a [routerLink]="['/login']">Logout</a></p> --> 
+</div>

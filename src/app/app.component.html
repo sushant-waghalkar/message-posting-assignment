@@ -1,0 +1,18 @@
+﻿<!-- main app container -->
+<!-- <mat-toolbar color="primary" *ngIf="showNav">
+<ul class="tabrow">
+    <li><a routerLink="home" routerLinkActive="active">Home</a></li>
+    <li><a routerLink="login" routerLinkActive="active">Login</a></li>
+    <li><a routerLink="register" routerLinkActive="active">Register</a></li>
+</ul>
+</mat-toolbar> -->
+<app-header></app-header>
+<div class="jumbotron">
+    <div class="container">
+        <div class="col-sm-8 col-sm-offset-2">
+            <alert></alert>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+

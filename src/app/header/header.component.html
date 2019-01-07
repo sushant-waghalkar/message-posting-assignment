@@ -1,0 +1,17 @@
+
+<!-- <mat-toolbar color="primary" *ngIf=true> -->
+<mat-toolbar color="primary" *ngIf="isLoggedIn$ | async as isLoggedIn">    
+<span class="banner">
+    <div data-content-switcher class="bx--content-switcher" role="tablist" aria-label="Demo switch content">
+        <button routerLink="home" routerLinkActive="active" class="bx--content-switcher-btn bx--content-switcher--selected" data-target=".demo--panel--opt-1" role="tab" aria-selected="true">
+          <span>Current User List</span>
+        </button>
+        <button routerLink="messanger" routerLinkActive="active" class="bx--content-switcher-btn" data-target=".demo--panel--opt-2" role="tab">
+          <span>Message Posting</span>
+        </button>
+    </div>    
+    <!-- <h3 class="welcome-style">Welcome {{currentUser.firstName}}!</h3> -->
+</span>
+
+<p><a [routerLink]="['/login']">Logout</a></p>  
+</mat-toolbar>

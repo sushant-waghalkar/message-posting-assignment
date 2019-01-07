@@ -1,0 +1,27 @@
+﻿<h3>Message Posting Page</h3>
+
+<div class="msg-container">
+  <div *ngFor="let message of messages" >
+    <h4 mat-line *ngIf="message.action === undefined">
+      <b>{{message.from}}</b>
+    </h4>
+    <p mat-line *ngIf="message.action === undefined">
+      <span> {{message.content}} </span><span class="date-style">{{message.time | date:'medium'}}</span>
+    </p>
+    <p>
+      
+    </p>
+    
+  </div>
+</div> 
+
+<div class="msg-bottom">
+  <div >
+    <input  class="msg-input"
+           #inputMessage 
+           maxlength="140" 
+           placeholder="write message" 
+           [(ngModel)]="messageContent" 
+           (keyup.enter)="sendMessage(messageContent)">
+  </div>
+</div>

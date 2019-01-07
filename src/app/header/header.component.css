@@ -1,0 +1,10 @@
+.banner{
+  border-bottom: solid darkblue  1px;
+  height: 53px;
+  width: 100%;
+}
+
+.welcome-style{
+  margin-top:-2%;
+  padding-left:50%;
+}

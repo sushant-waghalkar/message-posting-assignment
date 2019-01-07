@@ -1,0 +1,37 @@
+
+.msg-input {
+    padding-top: 5px;
+	width: 95%; 
+}
+
+.msg-container {
+	border:solid gray 1px;
+	width:40%;
+    position: fixed;
+    left: 30px;
+    overflow: auto;
+	right: 40px;
+    top: 125px;
+	bottom: 120px;
+	padding-left:15px;
+	padding-top:10px;
+}
+
+.msg-container-item {
+    margin-top: 2px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+    background-color: #E8EAF6;
+}
+
+.msg-bottom {
+    position:fixed;
+    bottom:25px;
+    left:25px;
+    right:25px;
+}
+
+.date-style{
+	font-size: 12px; 
+	color: mediumslateblue
+}
