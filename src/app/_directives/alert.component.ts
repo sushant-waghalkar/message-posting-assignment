@@ -1,4 +1,4 @@
-﻿import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { AlertService } from '../_services/index';
 
@@ -13,6 +13,12 @@ export class AlertComponent {
 
     constructor(private alertService: AlertService) { }
 
+    /**
+    * This method for show alert message on DOM
+    
+    * @param not contain any parameter
+
+    */
     ngOnInit() {
         this.alertService.getMessage().subscribe(message => { this.message = message; });
     }
