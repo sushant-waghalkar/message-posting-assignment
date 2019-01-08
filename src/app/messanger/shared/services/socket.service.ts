@@ -12,24 +12,56 @@ const SERVER_URL = 'http://localhost:8080';
 export class SocketService {
     private socket;
 
-    //initSocket() create instance of socketIo
+    
+    /**
+    * This is initSocket method intiate the socketIo
+    
+    * @param This method not contain any parameter
+
+    * @return This method does not return any value
+
+    */      
     public initSocket(): void {
         this.socket = socketIo(SERVER_URL);
     }
 
-    //Get msg content from chat.component and then emit msg content 
+    
+    /**
+    * This is send method emit the message
+    
+    * @param This is the message attribute  parameter type is string
+
+    * @return This method does not return any value
+
+    */
     public send(message: Message): void {
         this.socket.emit('message', message);
     }
 
-    //subscribe message data from observer    
+    
+    /**
+    * This is onMessage method assign value to observer
+    
+    * @param This method does not contain attribute
+
+    * @return return a observable version of message
+
+    */
     public onMessage(): Observable<Message> {
         return new Observable<Message>(observer => {
             this.socket.on('message', (data: Message) => observer.next(data));
         });
     }
 
-    //show server status like connect and disconnect
+    
+    /**
+    * This is onEvent method show server status
+    
+    * @param This is event parameter type of Event object
+
+    * @return return a observable version of message
+
+    */
     public onEvent(event: Event): Observable<any> {
         return new Observable<Event>(observer => {
             this.socket.on(event, () => observer.next());
