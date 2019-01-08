@@ -16,9 +16,9 @@ export class HeaderComponent implements OnInit {
     //this.currentUser = JSON.parse(localStorage.getItem('currentUser')); 
   }
 
+  //On page load assign user login status to a variable in boolean type  
   ngOnInit() {
     this.isLoggedIn$ = this.authService.isLoggedIn;
-    
   }
 
 
