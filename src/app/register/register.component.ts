@@ -1,4 +1,4 @@
-﻿import { Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AlertService, UserService } from '../_services/index';
@@ -17,7 +17,7 @@ export class RegisterComponent {
         private router: Router,
         private userService: UserService,
         private alertService: AlertService) { }
-
+    //function for Register new user by providing argument as user enter data in register form   
     register() {
         this.loading = true;
         this.userService.create(this.model)
