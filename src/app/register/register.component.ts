@@ -17,9 +17,19 @@ export class RegisterComponent {
         private router: Router,
         private userService: UserService,
         private alertService: AlertService) { }
-    //function for Register new user by providing argument as user enter data in register form   
+    
+        
+    /**
+    * This is register method for register new user by providing user input data    
+    
+    * @param This method do not contain parameter
+
+    * @return This method do not return any value
+
+    */
     register() {
         this.loading = true;
+        //providing argument model which contain user input data
         this.userService.create(this.model)
             .subscribe(
                 data => {
