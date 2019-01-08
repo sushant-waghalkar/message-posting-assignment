@@ -19,17 +19,29 @@ export class MessangerComponent implements OnInit {
     username:any;
     currentUser: currentUser;
 
-    constructor(private socketService: SocketService          
-    ) {this.currentUser = JSON.parse(localStorage.getItem('currentUser')); }
+    constructor(private socketService: SocketService) {
+      this.currentUser = JSON.parse(localStorage.getItem('currentUser')); 
+    }
+  
+        /** 
+        * On page load call initIoConnection method and assigned currentuser name to variable
 
-        //onpage load call initIoConnection() method and assigned currentuser name to variable  
+        */
         ngOnInit() {
           this.initIoConnection();  
           this.username = this.currentUser.username;
           console.log("this.currentUser---",this.currentUser.username)
         }
 
-        //function send message content and date,time to socketService.send method
+
+        /** 
+        * sendMessage function send message data to socketService.send method.
+
+        * @param message attribute contain user enter message data, parameter type of string
+
+        * @return This method does not return any thing
+
+        */
         public sendMessage(message: string): void {
             if (!message) {
               return;
@@ -43,10 +55,16 @@ export class MessangerComponent implements OnInit {
             this.messageContent = null;
           }
         
-        //initIoConnection() call three method from socket service initSocket(),onMessage(),onEvent()
-        //initSocket() create instance of socketIo 
-        //onMessage() subscribe message data from observer    
-        //onEvent() show server status like connect and disconnect
+          
+        /**
+        * This is initIoConnection method intiate the socketIo and subscrie message data
+        * this method subscribe onMessage and onEvent method
+
+        * @param This method does not have any parameter
+
+        * @return This method does not return any thing
+
+        */
         private initIoConnection(): void {
             this.socketService.initSocket();
             this.ioConnection = this.socketService.onMessage()
