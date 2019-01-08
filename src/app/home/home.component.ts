@@ -1,4 +1,4 @@
-﻿import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { User } from '../_models/index';
 import { UserService } from '../_services/index';
@@ -24,7 +24,8 @@ export class HomeComponent implements OnInit {
     deleteUser(id: number) {
         this.userService.delete(id).subscribe(() => { this.loadAllUsers() });
     }
-
+    
+    //call the service getall from userService for display all user list
     private loadAllUsers() {
         this.userService.getAll().subscribe(users => { this.users = users; });
     }
