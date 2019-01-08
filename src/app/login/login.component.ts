@@ -1,4 +1,4 @@
-﻿import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { AlertService, AuthenticationService } from '../_services/index';
@@ -20,14 +20,22 @@ export class LoginComponent implements OnInit {
         private authenticationService: AuthenticationService,
         private alertService: AlertService) { }
 
+    //On page load logout the user
     ngOnInit() {
         // reset login status
         this.authenticationService.logout();
-
         //this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
         this.returnUrl = '/home';
     }
 
+    /**
+    * This is login method for checking users credintial
+    
+    * @param This method does not contain parameter
+
+    * @return This method does not return any value
+
+    */
     login() {
         this.loading = true;
         this.authenticationService.login(this.model.username, this.model.password)
