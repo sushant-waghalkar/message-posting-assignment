@@ -1,4 +1,4 @@
-﻿import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpRequest, HttpResponse, HttpHandler, HttpEvent, HttpInterceptor, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
@@ -12,7 +12,16 @@ import 'rxjs/add/operator/dematerialize';
 export class FakeBackendInterceptor implements HttpInterceptor {
 
     constructor() { }
+    
+    
+    /**
+    * This method for implement the fake backend and modify the rest api
+    
+    * @param Contain request and next paramete with type of HttpRequest and HttpHandler
 
+    * @return return observable
+
+    */
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         // array in local storage for registered users
         let users: any[] = JSON.parse(localStorage.getItem('users')) || [];
